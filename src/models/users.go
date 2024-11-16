@@ -4,7 +4,7 @@ import "github.com/jinzhu/gorm"
 
 type Users struct {
 	gorm.Model
-	Id              int     `json:"id"`
+	IdCsv              int     `json:"id_csv"`
 	CurrentAge      int     `json:"currente_age"`
 	RetirementAge   int     `json:"retirement_age"`
 	BirthYear       int     `json:"birth_year"`

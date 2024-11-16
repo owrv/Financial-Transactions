@@ -10,7 +10,7 @@ type Users struct {
 	BirthYear       int     `json:"birth_year"`
 	BirthMonth      int     `json:"birth_month"`
 	Gender          int     `json:"gender"` // 0 para homem 1 para mulher
-	Address         string  `json:"address"`
+	Address         string  `json:"address" gorm:"size:500"`
 	Latitude        float32 `json:"latitude"`
 	Longitude       float32 `json:"longitude"`
 	PerCapitaIncome int     `json:"per_capita_income"`

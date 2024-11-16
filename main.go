@@ -11,6 +11,7 @@ var router = gin.Default()
 
 func main() {
 	db.GetConnections()
+	db.CreateDatabase()
 	getRoutes()
 	router.Run(":8081")
 

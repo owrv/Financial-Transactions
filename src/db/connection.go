@@ -1,5 +1,6 @@
 package db
+var db *gorm.DB
 
-func Connection() {
-
+func Connection() *gorm.DB {
+	return db
 }

@@ -1,7 +1,10 @@
 package db
 
 import (
+	"fmt"
 	"os"
+
+	"github.com/jinzhu/gorm"
 )
 
 var (
@@ -13,6 +16,17 @@ var (
 )
 
 var db *gorm.DB
+
+func GetConnections() {
+	psqlInfo := fmt.Sprintf("host=%s port=%s user=%s"+"password=%s dbname=%s sslmode=disabel", host, port, user, password, dbname)
+
+	var err error
+	db, err = gorm.Open("postgres", psqlInfo)
+
+	if err != nil {
+		panic("failed to connection database.")
+	}
+}
 
 func Connection() *gorm.DB {
 	return db

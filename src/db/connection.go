@@ -31,6 +31,7 @@ func GetConnections() {
 	db, err = gorm.Open("postgres", psqlInfo)
 
 	if err != nil {
+		fmt.Println("panic: ", err)
 		panic("failed to connection database.")
 	}
 }

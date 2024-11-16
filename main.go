@@ -1,6 +1,7 @@
 package main
 
 import (
+	"Financial-Transactions/src/db"
 	"Financial-Transactions/src/routes"
 
 	"github.com/gin-gonic/gin"
@@ -9,6 +10,7 @@ import (
 var router = gin.Default()
 
 func main() {
+	db.GetConnections()
 	getRoutes()
 	router.Run(":8081")
 

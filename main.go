@@ -5,11 +5,16 @@ import (
 	"Financial-Transactions/src/routes"
 
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 )
 
 var router = gin.Default()
 
 func main() {
+	err := godotenv.Load(".env")
+	if err != nil {
+		panic("Error loading .env file.")
+	}
 	db.GetConnections()
 	getRoutes()
 	router.Run(":8081")
